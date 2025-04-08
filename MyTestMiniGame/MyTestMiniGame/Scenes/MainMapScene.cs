@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 
 namespace MyTestMiniGame.Scenes
 {
-    public class MainMap : SceneOrigin
+    public class MainMapScene : SceneOrigin
     {
         public override void Render()
         {
+
         }
         public override void Input()
         {
+
         }
         public override void Update()
         {
+
         }
         public override void Result()
         {
+
         }
     }
 }
