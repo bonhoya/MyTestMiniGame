@@ -32,7 +32,7 @@ namespace MyTestMiniGame
             Console.SetWindowSize(33, 40);
             
             // ControlKey 세팅
-            controlKey = new ControlKey(new Vector2(11, 11));
+            controlKey = new ControlKey(new Vector2(11, 15));
 
             // 씬 설정
             sceneDic = new Dictionary<string, SceneOrigin>();

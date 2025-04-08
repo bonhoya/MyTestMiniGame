@@ -13,10 +13,14 @@ namespace MyTestMiniGame
         public override void Render()
         {
             Console.WriteLine("┌───────────────────────────────┐");
+            Console.WriteLine("│  _____          _             │");                  
+            Console.WriteLine("│ / __  \\_____  _| |_           │");                  
+            Console.WriteLine("│   / /\\/ _ \\ \\/ / __|          │");                  
+            Console.WriteLine("│  / / |  __/>  <| |_           │");
+            Console.WriteLine("│  \\/   \\___/_/\\_\\__|           │");
             Console.WriteLine("│                               │");
+            Console.WriteLine("│                Adventrue      │");
             Console.WriteLine("│                               │");
-            Console.WriteLine("│      Text                     │");
-            Console.WriteLine("│          Adventrue            │");
             Console.WriteLine("│                               │");
             Console.WriteLine("│         : 용사의 모험         │");
             Console.WriteLine("│                               │");
@@ -26,6 +30,8 @@ namespace MyTestMiniGame
             Console.WriteLine("             게임 시작           ");
             Console.WriteLine("             게임 설명           ");
             Console.WriteLine("             게임 종료           ");
+
+
 
             Game.ControlKey.Print();
         }

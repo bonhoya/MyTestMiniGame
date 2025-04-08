@@ -28,13 +28,13 @@ namespace MyTestMiniGame
                     targetPos.y++;
                     break;
             }
-            if (targetPos.y > 13)
+            if (targetPos.y > 17)
             {
-                targetPos.y = 11;
+                targetPos.y = 15;
             }
-            else if (targetPos.y < 11)
+            else if (targetPos.y < 15)
             {
-                targetPos.y = 13;
+                targetPos.y = 17;
             }
                 position = targetPos;
         }
@@ -51,15 +51,15 @@ namespace MyTestMiniGame
             switch (input)
             {
                 case ConsoleKey.Enter:
-                    if (position.y == 11)
+                    if (position.y == 15)
                     {
                         Game.ChangeScene("Home");
                     }
-                    else if (position.y == 12)
+                    else if (position.y == 16)
                     {
                         Game.ChangeScene("");
                     }
-                    else if (position.y == 13)
+                    else if (position.y == 17)
                     {
                         Game.GameOver();
                     }
