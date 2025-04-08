@@ -10,11 +10,22 @@ namespace MyTestMiniGame
     {
         public override void Render()
         {
-            
+            Console.WriteLine("┌───────────────────────────────┐");
+            Console.WriteLine("│                               │");
+            Console.WriteLine("│                               │");
+            Console.WriteLine("│      Text                     │");
+            Console.WriteLine("│          Adventrue            │");
+            Console.WriteLine("│                               │");
+            Console.WriteLine("│         : 용사의 모험         │");
+            Console.WriteLine("│                               │");
+            Console.WriteLine("│                               │");
+            Console.WriteLine("│                               │");
+            Console.WriteLine("└───────────────────────────────┘");
+            Console.WriteLine("Press The any button to continue.");
         }
         public override void Input()
         {
-
+            Console.ReadKey(true);
         }
         public override void Update()
         {
@@ -22,7 +33,7 @@ namespace MyTestMiniGame
         }
         public override void Result()
         {
-
+            Game.ChangeScene("MainMap");
         }
     }
 }

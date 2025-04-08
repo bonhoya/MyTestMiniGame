@@ -9,7 +9,7 @@ namespace MyTestMiniGame
 {
     public class Game
     {
-        private static SceneOrigin sceneOrigin;
+        private static SceneOrigin curScene;
 
         private static bool gameOver = false;
         private static Dictionary<string, SceneOrigin> sceneDic;
@@ -31,7 +31,12 @@ namespace MyTestMiniGame
             sceneDic.Add("Boss", new BossScene());
             sceneDic.Add("Ending", new EndingScene());
 
+            curScene = sceneDic["Opening"];
+        }
 
+        public static void ChangeScene(string SceneName)
+        {
+            curScene = sceneDic[SceneName];
         }
 
         public static void Run()
@@ -42,12 +47,13 @@ namespace MyTestMiniGame
             while(gameOver == false)
             {
                 Console.Clear();
-                sceneOrigin.Render();
-                sceneOrigin.Input();
-                sceneOrigin.Update();
-                sceneOrigin.Result();
+                curScene.Render();
+                curScene.Input();
+                curScene.Update();
+                curScene.Result();
             }
 
+            End();
         }
 
         // 게임 종료
