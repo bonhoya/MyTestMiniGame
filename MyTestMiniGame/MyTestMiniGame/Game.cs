@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MyTestMiniGame
 {
-    public class Game
+    public static class Game
     {
         private static SceneOrigin curScene;
 
-        private static bool gameOver = false;
+        private static bool gameOver;
         private static Dictionary<string, SceneOrigin> sceneDic;
         private static Player player;
         public static Player Player { get { return player; } }
@@ -24,7 +24,6 @@ namespace MyTestMiniGame
             // 게임 세팅
             gameOver = false;
             player = new Player();
-            
 
             // 씬 설정
             sceneDic = new Dictionary<string, SceneOrigin>();

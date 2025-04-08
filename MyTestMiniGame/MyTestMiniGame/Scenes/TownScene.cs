@@ -39,7 +39,7 @@ namespace MyTestMiniGame
                     {
                         map[y, x] = false;
                     }
-                    else
+                    else if (mapData[y][x] == ' ')
                     {
                         map[y, x] = true;
                     }
@@ -49,10 +49,12 @@ namespace MyTestMiniGame
             if (firstCount == 1)
             {
                 Game.Player.playerPos = new Vector2(3, 6);
+                Game.Player.map = map;
             }
             else
             {
                 Game.Player.playerPos = new Vector2(5, 12);
+                Game.Player.map = map;
             }
         }
     }

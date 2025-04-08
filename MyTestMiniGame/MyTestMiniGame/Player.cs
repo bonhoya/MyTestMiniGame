@@ -8,20 +8,17 @@ namespace MyTestMiniGame
 {
     public class Player
     {
-        
-        private int curhp;
-
-        public bool[,] map;
         public Vector2 playerPos;
+        public bool[,] map;
 
+        private int curhp;
         public int CurHP { get { return curhp; } }
 
         private int maxhp;
         public int MaxHP { get { return maxhp; } }
 
         public Player()
-        {
-            
+        { 
             maxhp = 100;
             curhp = maxhp;
         }
@@ -38,6 +35,7 @@ namespace MyTestMiniGame
         public void Move(ConsoleKey input)
         {
             Vector2 targetPos = playerPos;
+            
             switch(input)
             {
                 case ConsoleKey.W:
@@ -53,7 +51,8 @@ namespace MyTestMiniGame
                     targetPos.x++;
                     break;
             }
-            if (map[targetPos.y,targetPos.x] == true)
+
+            if (map[targetPos.y, targetPos.x] == true)
             {
                 playerPos = targetPos;
             }
