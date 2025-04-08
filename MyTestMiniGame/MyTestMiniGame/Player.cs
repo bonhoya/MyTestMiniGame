@@ -8,10 +8,11 @@ namespace MyTestMiniGame
 {
     public class Player
     {
-        private Vector2 playerPos;
+        
         private int curhp;
 
         public bool[,] map;
+        public Vector2 playerPos;
 
         public int CurHP { get { return curhp; } }
 

@@ -10,7 +10,8 @@ namespace MyTestMiniGame.Scenes
     {
         protected string[] mapData;
         protected bool[,] map;
-
+        protected int firstCount = 0;
+        
         private ConsoleKey input;
         
         public override void Render()
@@ -18,7 +19,7 @@ namespace MyTestMiniGame.Scenes
             PrintMap();
             
             Game.Player.Print();
-            Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            
 
         }
         public override void Input()
@@ -35,7 +36,8 @@ namespace MyTestMiniGame.Scenes
         }
         private void PrintMap()
         {
-            for(int y = 0; y < map.GetLength(0); y++)
+            Console.SetCursorPosition(0, 0);
+            for (int y = 0; y < map.GetLength(0); y++)
             {
                 for(int x = 0; x < map.GetLength(1); x++)
                 {

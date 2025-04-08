@@ -7,6 +7,7 @@ namespace MyTestMiniGame
 
         public TownScene()
         {
+            
             mapData = new string[]
             {
                 "##############################",
@@ -43,6 +44,15 @@ namespace MyTestMiniGame
                         map[y, x] = true;
                     }
                 }
+            }
+            firstCount = 1;
+            if (firstCount == 1)
+            {
+                Game.Player.playerPos = new Vector2(3, 6);
+            }
+            else
+            {
+                Game.Player.playerPos = new Vector2(5, 12);
             }
         }
     }
