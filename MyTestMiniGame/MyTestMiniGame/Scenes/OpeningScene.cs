@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyTestMiniGame
 {
-    internal class OpeningScene : FieldScene
+    public class OpeningScene : FieldScene
     {
+        private ConsoleKey input;
         public override void Render()
         {
             Console.WriteLine("┌───────────────────────────────┐");
@@ -22,19 +23,23 @@ namespace MyTestMiniGame
             Console.WriteLine("│                               │");
             Console.WriteLine("│                               │");
             Console.WriteLine("└───────────────────────────────┘");
-            Console.WriteLine("Press The any button to continue.");
+            Console.WriteLine("             게임 시작           ");
+            Console.WriteLine("             게임 설명           ");
+            Console.WriteLine("             게임 종료           ");
+
+            Game.ControlKey.Print();
         }
         public override void Input()
         {
-            Console.ReadKey(true);
+            input = Console.ReadKey(true).Key;
         }
         public override void Update()
         {
-
+            Game.ControlKey.Move(input);
         }
         public override void Result()
         {
-            Game.ChangeScene("Home");
+            Game.ControlKey.Enter(input);
         }
     }
 }

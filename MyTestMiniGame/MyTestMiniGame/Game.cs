@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,10 @@ namespace MyTestMiniGame
         private static Player player;
         public static Player Player { get { return player; } }
 
+        private static ControlKey controlKey;
+        public static ControlKey ControlKey { get { return controlKey; } }
+
+
         private static void Start()
         {
             // 커서 숨기기
@@ -24,6 +29,10 @@ namespace MyTestMiniGame
             // 게임 세팅
             gameOver = false;
             player = new Player();
+            Console.SetWindowSize(33, 40);
+            
+            // ControlKey 세팅
+            controlKey = new ControlKey(new Vector2(11, 11));
 
             // 씬 설정
             sceneDic = new Dictionary<string, SceneOrigin>();
@@ -46,9 +55,10 @@ namespace MyTestMiniGame
         public static void Run()
         {
             Start();
-           
+            
+
             //게임 루프
-            while(gameOver == false)
+            while (gameOver == false)
             {
                 Console.Clear();
                 curScene.Render();
@@ -64,6 +74,25 @@ namespace MyTestMiniGame
         private static void End()
         {
 
+        }
+
+        public static void GameOver()
+        {
+            gameOver = true;
+            Console.Clear();
+            Console.WriteLine("┌───────────────────────────────┐");
+            Console.WriteLine("│   _____                       │");
+            Console.WriteLine("│  / ____|                      │");
+            Console.WriteLine("│ | |  __  __ _ _ __ ____  ___  │");
+            Console.WriteLine("│ | | |_ |/ _` | '_ ` _  \\/ _ \\ │");
+            Console.WriteLine("│ | |__| | (_| | | | | | |  __/ │");
+            Console.WriteLine("│  \\_____|\\__,_|_| |_| |_|\\___| │");
+            Console.WriteLine("│  / __ \\                       │");
+            Console.WriteLine("│ | |  | |_   _____ _ __        │");
+            Console.WriteLine("│ | |  | \\ \\ / / _ \\ '__|       │");
+            Console.WriteLine("│ | |__| |\\ V /  __/ |          │");
+            Console.WriteLine("│  \\____/  \\_/ \\___|_|          │");
+            Console.WriteLine("└───────────────────────────────┘");
         }
     }
 }
