@@ -38,11 +38,12 @@ namespace MyTestMiniGame
             sceneDic = new Dictionary<string, SceneOrigin>();
             sceneDic.Add("Opening", new OpeningScene());
             sceneDic.Add("MainMap", new MainMapScene());
-            sceneDic.Add("Home", new Home());
+            sceneDic.Add("Home", new HomeScene());
             sceneDic.Add("Dungeon01", new Dungeon01Scene());
             sceneDic.Add("Dungeon02", new Dungeon02Scene());
             sceneDic.Add("Boss", new BossScene());
             sceneDic.Add("Ending", new EndingScene());
+            sceneDic.Add("HomeTown", new HomeTownScene());
 
             curScene = sceneDic["Opening"];
         }

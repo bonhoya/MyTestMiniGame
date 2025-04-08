@@ -21,7 +21,9 @@ namespace MyTestMiniGame.Scenes
           '┘',
           '├',
           '┤',
-          '〓'
+          '〓',
+          '┴',
+          '┬'
 
         };
 
@@ -32,6 +34,7 @@ namespace MyTestMiniGame.Scenes
 
         public override void Render()
         {
+            Console.SetWindowSize(map.GetLength(1), map.GetLength(0) + 20);
             PrintMap();
             foreach (Object obj in objects)
             {
@@ -53,7 +56,14 @@ namespace MyTestMiniGame.Scenes
         }
         public override void Result()
         {
-            
+            foreach(Object obj in objects)
+            {
+                if (Game.Player.playerPos.x == obj.ObjPos.x 
+                    && Game.Player.playerPos.y == obj.ObjPos.y)
+                {
+                    obj.Interact(Game.Player);
+                }
+            }
         }
         private void PrintMap()
         {

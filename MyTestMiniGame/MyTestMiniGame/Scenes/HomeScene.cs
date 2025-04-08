@@ -2,12 +2,12 @@
 
 namespace MyTestMiniGame
 {
-    public class Home : FieldScene
+    public class HomeScene : FieldScene
     {
 
-        public Home()
+        public HomeScene()
         {
-
+            
             mapData = new string[]
             {
                 "##############################",
@@ -43,7 +43,7 @@ namespace MyTestMiniGame
             }
 
             objects = new List<Object>();
-            objects.Add(new Portal("Home", new Vector2(20, 3), 'P'));
+            objects.Add(new Portal("HomeTown", new Vector2(20, 3), 'P'));
 
             firstCount = 1;
             if (firstCount == 1)
@@ -58,7 +58,6 @@ namespace MyTestMiniGame
 
             }
         }
-
 
 
     }
