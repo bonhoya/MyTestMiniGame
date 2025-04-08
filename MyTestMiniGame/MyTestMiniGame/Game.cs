@@ -13,6 +13,9 @@ namespace MyTestMiniGame
 
         private static bool gameOver = false;
         private static Dictionary<string, SceneOrigin> sceneDic;
+        private static Player player;
+        public static Player Player { get { return player; } }
+
         private static void Start()
         {
             // 커서 숨기기
@@ -20,6 +23,8 @@ namespace MyTestMiniGame
 
             // 게임 세팅
             gameOver = false;
+            player = new Player();
+            
 
             // 씬 설정
             sceneDic = new Dictionary<string, SceneOrigin>();

@@ -1,28 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyTestMiniGame.Scenes;
 
 namespace MyTestMiniGame
 {
-    public class TownScene : SceneOrigin
+    public class TownScene : FieldScene
     {
-        public override void Render()
-        {
 
-        }
-        public override void Input()
+        public TownScene()
         {
+            mapData = new string[]
+            {
+                "##############################",
+                "#                            #",
+                "#                            #",
+                "#────────────────────────────#",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "#                            #",
+                "##############################"
+            };
 
-        }
-        public override void Update()
-        {
-
-        }
-        public override void Result()
-        {
-
+            map = new bool[14, 30];
+            for (int y = 0; y < map.GetLength(0); y++)
+            {
+                for (int x = 0; x < map.GetLength(1); x++)
+                {
+                    if (mapData[y][x] == '#')
+                    {
+                        map[y, x] = false;
+                    }
+                    else if (mapData[y][x] == '─')
+                    {
+                        map[y, x] = false;
+                    }
+                    else
+                    {
+                        map[y, x] = true;
+                    }
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTestMiniGame.Scenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyTestMiniGame
 {
-    internal class OpeningScene : SceneOrigin
+    internal class OpeningScene : FieldScene
     {
         public override void Render()
         {
@@ -33,7 +34,7 @@ namespace MyTestMiniGame
         }
         public override void Result()
         {
-            Game.ChangeScene("MainMap");
+            Game.ChangeScene("Town");
         }
     }
 }
