@@ -34,7 +34,7 @@ namespace MyTestMiniGame
         }
         public override void Result()
         {
-            Game.ChangeScene("Town");
+            Game.ChangeScene("Home");
         }
     }
 }

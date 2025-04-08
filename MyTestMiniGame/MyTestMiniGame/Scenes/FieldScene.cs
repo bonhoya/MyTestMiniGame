@@ -11,12 +11,32 @@ namespace MyTestMiniGame.Scenes
         protected string[] mapData;
         protected bool[,] map;
         protected int firstCount = 0;
-        
+        protected char[] picture =
+        { '#',
+          '─',
+          '│',
+          '┌',
+          '┐',
+          '└',
+          '┘',
+          '├',
+          '┤',
+          '〓'
+        };
+
+
         private ConsoleKey input;
-        
+
+        protected List<Object> objects;
+
         public override void Render()
         {
             PrintMap();
+            foreach (Object obj in objects)
+            {
+                obj.Print();
+            }
+
             
             Game.Player.Print();
             
@@ -32,7 +52,7 @@ namespace MyTestMiniGame.Scenes
         }
         public override void Result()
         {
-
+            
         }
         private void PrintMap()
         {
@@ -47,13 +67,9 @@ namespace MyTestMiniGame.Scenes
                     }
                     else if (map[y, x] == false)
                     {
-                        if (mapData[y][x] == '#')
+                        if (picture.Contains(mapData[y][x]))
                         {
-                            Console.Write('#');
-                        }
-                        if (mapData[y][x] == '─')
-                        {
-                            Console.Write('─');
+                            Console.Write(mapData[y][x]);
                         }
                     }
                 }

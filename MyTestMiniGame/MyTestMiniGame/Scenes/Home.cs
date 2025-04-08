@@ -2,22 +2,22 @@
 
 namespace MyTestMiniGame
 {
-    public class TownScene : FieldScene
+    public class Home : FieldScene
     {
 
-        public TownScene()
+        public Home()
         {
-            
+
             mapData = new string[]
             {
                 "##############################",
+                "#   ┌┐        ┌┐             #",
+                "#   └┘        └┘   ┌─┐       #",
+                "#──────────────────┘ └───────#",
                 "#                            #",
-                "#                            #",
-                "#────────────────────────────#",
-                "#                            #",
-                "#                            #",
-                "#                            #",
-                "#                            #",
+                "#  ┌〓┐                      #",
+                "#  │  │                      #",
+                "#  ├──┤                      #",
                 "#                            #",
                 "#                            #",
                 "#                            #",
@@ -31,20 +31,20 @@ namespace MyTestMiniGame
             {
                 for (int x = 0; x < map.GetLength(1); x++)
                 {
-                    if (mapData[y][x] == '#')
+                    if (x < mapData[y].Length && picture.Contains(mapData[y][x]))
                     {
                         map[y, x] = false;
                     }
-                    else if (mapData[y][x] == '─')
-                    {
-                        map[y, x] = false;
-                    }
-                    else if (mapData[y][x] == ' ')
+                    else
                     {
                         map[y, x] = true;
                     }
                 }
             }
+
+            objects = new List<Object>();
+            objects.Add(new Portal("Home", new Vector2(20, 3), 'P'));
+
             firstCount = 1;
             if (firstCount == 1)
             {
@@ -55,7 +55,11 @@ namespace MyTestMiniGame
             {
                 Game.Player.playerPos = new Vector2(5, 12);
                 Game.Player.map = map;
+
             }
         }
+
+
+
     }
 }
