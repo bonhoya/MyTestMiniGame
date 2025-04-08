@@ -10,25 +10,27 @@ namespace MyTestMiniGame.Scenes
     {
         public HomeTownScene()
         {
+            name = "HomeTown";
+
             mapData = new string[]
             {
-                "#############################                #",
-                "#   ┌┐        ┌┐       ┌┬┘                   #",
-                "#   └┘        └┘   ┌─┐  ├─┘                  #",
-                "#──────────────────┘ └─│┴│───                #",
-                "#                      └─┘                   #",
-                "#  ┌〓┐                                      #",
-                "#  │──│                                      #",
-                "#  ├──┤               ┌──────                #",
-                "#                     │                      #",
-                "#                     │                      #",
-                "#─────────────────────┴──────                #",
-                "#                                            #",
-                "#                                            #",
-                "#############################                #"
+                "##########################################################",
+                "#    /____/   \\___\\     ______       /  ┌┼┼─  \\ /\\│/│    #",
+                "#   /     \\  /│  /─────│〓〓〓│     /   └┼┼┐   \\ │/│/    #",
+                "#──/│   ┌┐│\\/││ /      │〓〓〓│────/│ ┌┐─┼┼┘┌┐ │\\/│/─────#",
+                "#   │┌─┐└┘││__│/       │      │   //│ └┘┌─┐ └┘ │ \\/     /#",
+                "#   └┘ └──┘/                        └───┘ └────┘/      / #",
+                "#                                                     /  #",
+                "#                                                /\\  /   #",
+                "#                                                \\/ /    #",
+                "#           ┐_┌                                   │/     #",
+                "#      _____┘ └_                                  /______#",
+                "#     /-/-/-/-/-\\                                │       #",
+                "#    /-/-/-/-/-/-\\                               │______ #",
+                "#################################################/     /##"
             };
 
-            map = new bool[14, 46];
+            map = new bool[14, 58];
             for (int y = 0; y < map.GetLength(0); y++)
             {
                 for (int x = 0; x < map.GetLength(1); x++)
@@ -44,8 +46,20 @@ namespace MyTestMiniGame.Scenes
                 }
             }
             objects = new List<Object>();
-            objects.Add(new Portal("HomeTown", new Vector2(20, 3), 'P'));
+            objects.Add(new Portal("Home", new Vector2(6, 5), 'P'));
         }
-        
+        public override void Enter()
+        {
+            if (Game.preSceneName == "Home")
+            {
+                Game.Player.playerPos = new Vector2(6, 5);
+            }
+            else
+            {
+                Game.Player.playerPos = new Vector2(15, 8);
+            }
+            Game.Player.map = map;
+
+        }
     }
 }

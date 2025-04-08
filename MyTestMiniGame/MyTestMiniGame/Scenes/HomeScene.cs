@@ -1,4 +1,5 @@
 ﻿using MyTestMiniGame.Scenes;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyTestMiniGame
 {
@@ -7,19 +8,20 @@ namespace MyTestMiniGame
 
         public HomeScene()
         {
-            
+            name = "Home";
+
             mapData = new string[]
             {
                 "##############################",
-                "#   ┌┐        ┌┐       ┌┬┘   #",
-                "#   └┘        └┘   ┌─┐  ├─┘  #",
-                "#──────────────────┘ └─│┴│───#",
-                "#                      └─┘   #",
-                "#  ┌〓┐                      #",
-                "#  │──│                      #",
-                "#  ├──┤               ┌──────#",
-                "#                     │      #",
-                "#                     │      #",
+                "#  │   │       ┌┐       ┌┬┘  #",
+                "#  │   │       └┘   ┌─┐  ├─┘ #",
+                "#  │  /└────────────┘ └─│┴│──#",
+                "#  │ /                  └─┘  #",
+                "#__│/                        #",
+                "#                            #",
+                "#               /〓/│ ┌──────#",
+                "#              /──/   │      #",
+                "#             ├──┤    │      #",
                 "#─────────────────────┴──────#",
                 "#                            #",
                 "#                            #",
@@ -43,20 +45,21 @@ namespace MyTestMiniGame
             }
 
             objects = new List<Object>();
-            objects.Add(new Portal("HomeTown", new Vector2(20, 3), 'P'));
+            objects.Add(new Portal("HomeTown", new Vector2(21, 3), 'P'));
 
-            firstCount = 1;
-            if (firstCount == 1)
+        }
+        public override void Enter()
+        {
+            if (Game.preSceneName == "HomeTown")
             {
-                Game.Player.playerPos = new Vector2(6, 6);
-                Game.Player.map = map;
+                Game.Player.playerPos = new Vector2(21, 3);
             }
             else
             {
-                Game.Player.playerPos = new Vector2(5, 12);
-                Game.Player.map = map;
-
+                Game.Player.playerPos = new Vector2(15, 8);
             }
+            Game.Player.map = map;
+
         }
 
 

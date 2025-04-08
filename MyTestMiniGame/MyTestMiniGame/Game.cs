@@ -11,7 +11,6 @@ namespace MyTestMiniGame
     public static class Game
     {
         private static SceneOrigin curScene;
-
         private static bool gameOver;
         private static Dictionary<string, SceneOrigin> sceneDic;
         private static Player player;
@@ -20,6 +19,7 @@ namespace MyTestMiniGame
         private static ControlKey controlKey;
         public static ControlKey ControlKey { get { return controlKey; } }
 
+        public static string preSceneName;
 
         private static void Start()
         {
@@ -50,7 +50,9 @@ namespace MyTestMiniGame
 
         public static void ChangeScene(string SceneName)
         {
+            preSceneName = curScene.name;
             curScene = sceneDic[SceneName];
+            curScene.Enter();
         }
 
         public static void Run()
@@ -63,8 +65,11 @@ namespace MyTestMiniGame
             {
                 Console.Clear();
                 curScene.Render();
+                Console.WriteLine();
                 curScene.Input();
+                Console.WriteLine();
                 curScene.Update();
+                Console.WriteLine();
                 curScene.Result();
             }
 

@@ -23,7 +23,11 @@ namespace MyTestMiniGame.Scenes
           '┤',
           '〓',
           '┴',
-          '┬'
+          '┬',
+          '/',
+          '\\',
+          '_',
+          '┼'
 
         };
 
