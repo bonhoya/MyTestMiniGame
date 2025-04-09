@@ -12,6 +12,7 @@
         public int MaxHP { get { return maxhp; } }
 
         public Inventory inventory;
+        public Inventory Inventory { get { return inventory; } }
 
 
         public Player()
@@ -62,6 +63,21 @@
             if (map[targetPos.y, targetPos.x] == true)
             {
                 playerPos = targetPos;
+            }
+        }
+        public void PlayerAction(ConsoleKey input)
+        {
+            switch(input)
+            {
+                case ConsoleKey.W:
+                case ConsoleKey.S:
+                case ConsoleKey.A:
+                case ConsoleKey.D:
+                    Move(input);
+                    break;
+                case ConsoleKey.I:
+                    Inventory.Open();
+                    break;
             }
         }
     }

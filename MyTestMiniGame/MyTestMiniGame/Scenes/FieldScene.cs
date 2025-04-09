@@ -49,7 +49,7 @@ namespace MyTestMiniGame.Scenes
             Game.Player.Print();
 
             Console.SetCursorPosition(0, map.GetLength(0) + 2);
-            Game.Player.inventory.PrintAll();
+            
 
         }
         public override void Input()
@@ -58,7 +58,7 @@ namespace MyTestMiniGame.Scenes
         }
         public override void Update()
         {
-            Game.Player.Move(input);
+            Game.Player.PlayerAction(input);
         }
         public override void Result()
         {
