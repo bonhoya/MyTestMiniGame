@@ -11,7 +11,7 @@ namespace MyTestMiniGame.Scenes
         protected string[] mapData;
         protected bool[,] map;
         protected int firstCount = 0;
-        protected char[] picture =
+        protected char[] pictureFalse =
         { '#', '─', '│', '┌', '┐', '└', '┘', '├', '┤', '〓', '┴', '┬',
           '/', '\\','_', '┼', '$', '\'','♠','M', 'T', 'O', 'W', 'N', '♥',
           'D', 'U', 'G', 'E', '♣', 'A', 'Z', '◆', 'B', 'S' };
@@ -73,7 +73,7 @@ namespace MyTestMiniGame.Scenes
                     }
                     else if (map[y, x] == false)
                     {
-                        if (picture.Contains(mapData[y][x]))
+                        if (pictureFalse.Contains(mapData[y][x]))
                         {
                             Console.Write(mapData[y][x]);
                         }

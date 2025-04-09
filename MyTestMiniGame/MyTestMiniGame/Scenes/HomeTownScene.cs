@@ -36,7 +36,7 @@ namespace MyTestMiniGame.Scenes
             {
                 for (int x = 0; x < map.GetLength(1); x++)
                 {
-                    if (x < mapData[y].Length && picture.Contains(mapData[y][x]))
+                    if (x < mapData[y].Length && pictureFalse.Contains(mapData[y][x]))
                     {
                         map[y, x] = false;
                     }

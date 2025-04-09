@@ -24,7 +24,7 @@ namespace MyTestMiniGame.Scenes
                 "#                │   │              │   │    │   │     │   │      │     'B'    │ #",
                 "#        ┌───────┴┐ ┌┴─┐            │   │    │   └─────┘   │      │     '◆'    │ #",
                 "#        │             ├────────────┘   │    │             │      └────────────┘ #",
-                "#        │  'DUNGEON'                   │    └─────────────┘                     #",
+                "#        │'DUNGEON'                     │    └─────────────┘                     #",
                 "#        │'♥'          ├────────────────┘                                        #",
                 "#        └─────────────┘                                                         #",
                 "###################################################################################"
@@ -34,7 +34,7 @@ namespace MyTestMiniGame.Scenes
             {
                 for (int x = 0; x < map.GetLength(1); x++)
                 {
-                    if (x < mapData[y].Length && picture.Contains(mapData[y][x]))
+                    if (x < mapData[y].Length && pictureFalse.Contains(mapData[y][x]))
                     {
                         map[y, x] = false;
                     }
@@ -46,10 +46,8 @@ namespace MyTestMiniGame.Scenes
             }
             objects = new List<Object>();
             objects.Add(new Portal("HomeTown", new Vector2(9, 3), 'P'));
-            objects.Add(new Portal("DungeonToTown", new Vector2(19, 8), 'P'));
-            objects.Add(new Portal("DungeonToMaze", new Vector2(23, 10), 'P'));
-            objects.Add(new Portal("MazeToDungeon", new Vector2(38, 4), 'P'));
-            objects.Add(new Portal("MazeToBoss", new Vector2(47, 4), 'P'));
+            objects.Add(new Portal("DungeonQuiz", new Vector2(19, 10), 'P'));
+            objects.Add(new Portal("Maze", new Vector2(42, 3), 'P'));
             objects.Add(new Portal("Boss", new Vector2(66, 5), 'P'));
 
         }
@@ -59,27 +57,21 @@ namespace MyTestMiniGame.Scenes
             {
                 Game.Player.playerPos = new Vector2(9, 3);
             }
-            else if (Game.preSceneName == "DungeonToTown")
+            else if (Game.preSceneName == "Dungeon")
             {
-                Game.Player.playerPos = new Vector2(19, 8);
+                Game.Player.playerPos = new Vector2(19, 10);
             }
-            else if (Game.preSceneName == "DungeonToMaze")
+            else if (Game.preSceneName == "Maze")
             {
-                Game.Player.playerPos = new Vector2(23, 10);
-            }
-            else if (Game.preSceneName == "MazeToDungeon")
-            {
-                Game.Player.playerPos = new Vector2(38, 4);
-            }
-            else if (Game.preSceneName == "MazeToBoss")
-            {
-                Game.Player.playerPos = new Vector2(47, 4);
+                Game.Player.playerPos = new Vector2(42, 3);
             }
             else if (Game.preSceneName == "Boss")
             {
                 Game.Player.playerPos = new Vector2(66, 5);
             }
-    
+            else
+                Game.Player.playerPos = new Vector2(23, 10);
+
             Game.Player.map = map;
 
         }

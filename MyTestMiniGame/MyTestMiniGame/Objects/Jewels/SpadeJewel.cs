@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTestMiniGame.Objects.Jewels
 {
-    public class SpadeJewel : Jewel
+    public class SpadeJewel : Jewel 
     {
         public SpadeJewel(Vector2 ObjPos) 
             : base(ConsoleColor.DarkRed, ObjPos, '♠')
@@ -17,7 +17,7 @@ namespace MyTestMiniGame.Objects.Jewels
 
         public override void Use()
         {
-            
+            Console.WriteLine("이 아이템은 사용할 수 없습니다.");
         }
     }
 }

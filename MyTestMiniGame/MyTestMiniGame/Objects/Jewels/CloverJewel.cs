@@ -18,7 +18,7 @@ namespace MyTestMiniGame.Objects.Jewels
 
         public override void Use()
         {
-
+            Console.WriteLine("이 아이템은 사용할 수 없습니다.");
         }
     }
 }

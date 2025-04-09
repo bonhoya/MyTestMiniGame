@@ -43,7 +43,7 @@ namespace MyTestMiniGame
 
         public void PrintAll()
         {
-            Console.WriteLine("━━ 인벤토리 ━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("━━ 인벤토리 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             if (items.Count == 0)
             {
                 Console.WriteLine("인벤토리는 텅텅 비어있다!");
@@ -52,12 +52,12 @@ namespace MyTestMiniGame
             {
                 Console.WriteLine("{0}. {1}", i + 1, items[i].name);
             }
-            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-            Console.WriteLine("━━ 골드 ━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("━━ 골드 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             Console.WriteLine("현재 가진 골드: {0}", gold);
-            Console.WriteLine("━━ 체력 ━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("━━ 체력 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             Console.WriteLine("현재 가진 체력: {0}", (new Player().CurHP));
-            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         }
 
         public void Open()
@@ -180,11 +180,24 @@ namespace MyTestMiniGame
             switch (input)
             {
                 case ConsoleKey.Y:
-                    selectItem.Use();
-                    Console.WriteLine("{0} : 아이템을 사용했습니다.", selectItem.name);
-                    Console.ReadKey(true);
-                    stack.Pop();
-                    break;
+                    if (selectItem.name == "스페이드 쥬얼"
+                        || selectItem.name == "하트 쥬얼"
+                        || selectItem.name == "클로버 쥬얼"
+                        || selectItem.name == "다이아몬드 쥬얼")
+                    {
+                        selectItem.Use();
+                        Console.ReadKey(true);
+                        stack.Pop();
+                        break;
+                    }
+                    else
+                    {
+                        selectItem.Use();
+                        Console.WriteLine("{0} : 아이템을 사용했습니다.", selectItem.name);
+                        Console.ReadKey(true);
+                        stack.Pop();
+                        break;
+                    }
                 case ConsoleKey.N:
                     Console.WriteLine("아이템을 사용하지 않았습니다.");
                     Console.ReadKey(true);

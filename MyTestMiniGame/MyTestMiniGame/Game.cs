@@ -40,6 +40,7 @@ namespace MyTestMiniGame
             sceneDic.Add("MainMap", new MainMapScene());
             sceneDic.Add("Home", new HomeScene());
             sceneDic.Add("Dungeon", new DungeonScene());
+            sceneDic.Add("DungeonQuiz", new DungeonQuizScene());
             sceneDic.Add("Maze", new MazeScene());
             sceneDic.Add("Boss", new BossScene());
             sceneDic.Add("Ending", new EndingScene());

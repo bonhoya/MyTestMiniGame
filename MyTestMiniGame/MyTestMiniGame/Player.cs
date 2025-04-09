@@ -4,6 +4,7 @@
     {
         public Vector2 playerPos;
         public bool[,] map;
+        
 
         private int curhp;
         public int CurHP { get { return curhp; } }
@@ -20,6 +21,7 @@
             inventory = new Inventory();
             maxhp = 100;
             curhp = maxhp;
+
         }
 
         public void Heal(int amount)
@@ -76,6 +78,7 @@
                     Move(input);
                     break;
                 case ConsoleKey.I:
+                    Console.SetWindowSize(59, 30);
                     Inventory.Open();
                     break;
             }
