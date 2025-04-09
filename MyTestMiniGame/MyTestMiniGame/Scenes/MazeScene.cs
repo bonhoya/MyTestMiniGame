@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTestMiniGame.Scenes
 {
-    public class Dungeon02Scene : FieldScene
+    public class MazeScene : FieldScene
     {
         public override void Render()
         {

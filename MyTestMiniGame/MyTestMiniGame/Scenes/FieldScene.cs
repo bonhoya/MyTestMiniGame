@@ -12,26 +12,9 @@ namespace MyTestMiniGame.Scenes
         protected bool[,] map;
         protected int firstCount = 0;
         protected char[] picture =
-        { '#',
-          '─',
-          '│',
-          '┌',
-          '┐',
-          '└',
-          '┘',
-          '├',
-          '┤',
-          '〓',
-          '┴',
-          '┬',
-          '/',
-          '\\',
-          '_',
-          '┼',
-          '$'
-
-        };
-
+        { '#', '─', '│', '┌', '┐', '└', '┘', '├', '┤', '〓', '┴', '┬',
+          '/', '\\','_', '┼', '$', '\'','♠','M', 'T', 'O', 'W', 'N', '♥',
+          'D', 'U', 'G', 'E', '♣', 'A', 'Z', '◆', 'B', 'S' };
 
         private ConsoleKey input;
 

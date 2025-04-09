@@ -49,7 +49,7 @@ namespace MyTestMiniGame.Scenes
             objects = new List<Object>();
             objects.Add(new Portal("Home", new Vector2(6, 5), 'P'));
             objects.Add(new Portal("Shop", new Vector2(41, 5), 'P'));
-            objects.Add(new Potion(new Vector2(13, 5)));
+            objects.Add(new Portal("MainMap", new Vector2(50, 12), 'P'));
         }
         public override void Enter()
         {
@@ -60,6 +60,10 @@ namespace MyTestMiniGame.Scenes
             else if(Game.preSceneName == "Shop")
             {
                 Game.Player.playerPos = new Vector2(41, 5);
+            }
+            else if (Game.preSceneName == "MainMap")
+            {
+                Game.Player.playerPos = new Vector2(50, 12);
             }
             else
             {
