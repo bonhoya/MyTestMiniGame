@@ -1,4 +1,5 @@
-﻿using MyTestMiniGame.Scenes;
+﻿
+using MyTestMiniGame.Scenes;
 using System.Security.Cryptography.X509Certificates;
 
 namespace MyTestMiniGame.Scenes
@@ -46,6 +47,7 @@ namespace MyTestMiniGame.Scenes
 
             objects = new List<Object>();
             objects.Add(new Portal("HomeTown", new Vector2(21, 3), 'P'));
+            objects.Add(new Jewel("HomeTown", new Vector2(21, 3), 'P'));
 
         }
         public override void Enter()

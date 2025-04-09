@@ -11,8 +11,8 @@ namespace MyTestMiniGame.Objects
         public string name;
         public string description;
 
-        public Item(Vector2 ObjPos, char initialMark) 
-            : base(ConsoleColor.Yellow, ObjPos, initialMark, true)
+        public Item(ConsoleColor color, Vector2 ObjPos, char initialMark) 
+            : base(color , ObjPos, initialMark, true)
         {
 
         }

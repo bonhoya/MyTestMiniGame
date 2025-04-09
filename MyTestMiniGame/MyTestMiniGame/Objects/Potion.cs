@@ -9,7 +9,7 @@ namespace MyTestMiniGame.Objects
     public class Potion : Item
     {
         public Potion(Vector2 ObjPos) 
-            : base(ObjPos, 'P')
+            : base(ConsoleColor.DarkMagenta, ObjPos,'P')
         {
             name = "일반 포션";
             description = "체력을 30 채워준다.";
