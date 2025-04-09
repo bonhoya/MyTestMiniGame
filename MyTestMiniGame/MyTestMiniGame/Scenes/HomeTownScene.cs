@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTestMiniGame.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,7 @@ namespace MyTestMiniGame.Scenes
             }
             objects = new List<Object>();
             objects.Add(new Portal("Home", new Vector2(6, 5), 'P'));
+            objects.Add(new Potion(new Vector2(13, 5)));
         }
         public override void Enter()
         {

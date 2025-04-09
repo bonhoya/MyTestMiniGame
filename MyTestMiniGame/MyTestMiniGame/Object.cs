@@ -11,12 +11,14 @@ namespace MyTestMiniGame
         public ConsoleColor color;
         public Vector2 ObjPos;
         public char initialMark;
+        public bool singleUse;
 
-        public Object(ConsoleColor color, Vector2 ObjPos, char initialMark)
+        public Object(ConsoleColor color, Vector2 ObjPos, char initialMark, bool singleUse)
         {
             this.color = color;
             this.ObjPos = ObjPos;
             this.initialMark = initialMark;
+            this.singleUse = singleUse;
         }
 
         public void Print()

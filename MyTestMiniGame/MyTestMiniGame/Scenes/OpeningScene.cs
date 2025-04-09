@@ -30,6 +30,10 @@ namespace MyTestMiniGame
             Console.WriteLine("             게임 시작           ");
             Console.WriteLine("             게임 설명           ");
             Console.WriteLine("             게임 종료           ");
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("####  W, A, S, D로 조작하고  ####");
+            Console.WriteLine("####  Enter키로 선택합니다.  ####");
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
 
 

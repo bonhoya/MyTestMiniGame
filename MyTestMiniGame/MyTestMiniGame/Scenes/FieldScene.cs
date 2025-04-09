@@ -43,11 +43,13 @@ namespace MyTestMiniGame.Scenes
             foreach (Object obj in objects)
             {
                 obj.Print();
+                
             }
 
-            
             Game.Player.Print();
-            
+
+            Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            Game.Player.inventory.PrintAll();
 
         }
         public override void Input()
@@ -66,6 +68,11 @@ namespace MyTestMiniGame.Scenes
                     && Game.Player.playerPos.y == obj.ObjPos.y)
                 {
                     obj.Interact(Game.Player);
+                    if (obj.singleUse == true)
+                    {
+                        objects.Remove(obj);
+                    }
+                    break;
                 }
             }
         }

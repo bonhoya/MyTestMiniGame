@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyTestMiniGame
+﻿namespace MyTestMiniGame
 {
     public class Player
     {
@@ -17,10 +11,23 @@ namespace MyTestMiniGame
         private int maxhp;
         public int MaxHP { get { return maxhp; } }
 
+        public Inventory inventory;
+
+
         public Player()
-        { 
+        {
+            inventory = new Inventory();
             maxhp = 100;
             curhp = maxhp;
+        }
+
+        public void Heal(int amount)
+        {
+            curhp += amount;
+            if (curhp > maxhp)
+            {
+                curhp = maxhp;
+            }
         }
 
         public void Print()
@@ -35,8 +42,8 @@ namespace MyTestMiniGame
         public void Move(ConsoleKey input)
         {
             Vector2 targetPos = playerPos;
-            
-            switch(input)
+
+            switch (input)
             {
                 case ConsoleKey.W:
                     targetPos.y--;
