@@ -4,7 +4,7 @@ namespace MyTestMiniGame
 {
     public class Inventory
     {
-        private List<Item> items;
+        public List<Item> items;
         private Stack<string> stack;
         private int selectIndex;
 

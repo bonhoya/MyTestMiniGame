@@ -11,7 +11,7 @@ namespace MyTestMiniGame.Scenes
     {
         
         private ConsoleKey input;
-        
+        private int selectIndex;
         public ShopperScene()
         {
             name = "Shopper";
@@ -41,7 +41,7 @@ namespace MyTestMiniGame.Scenes
             {
                 case ConsoleKey.D1:
                     
-                    if ((Game.Player.inventory.Gold - 300) <= 0)
+                    if ((Game.Player.inventory.Gold - 300) < 0)
                     {
                         Console.WriteLine("소지금이 부족합니다.");
                         Console.ReadKey(true);
@@ -52,6 +52,7 @@ namespace MyTestMiniGame.Scenes
                         Game.Player.inventory.Gold -= 300;
                         Console.WriteLine("포션을 구매하였습니다. (-300$)");
                         Game.Player.inventory.Add(potion);
+                        Game.Player.inventory.PrintAll();
                         Console.ReadKey(true);
                     }
                     break;
@@ -59,6 +60,35 @@ namespace MyTestMiniGame.Scenes
                     Console.WriteLine("몇번째 포션을 파시겠습니까?");
                     Game.Player.inventory.PrintAll();
                     Console.WriteLine("해당하는 포션의 숫자를 입력해주세요.");
+                    
+                    ConsoleKey inputNum = Console.ReadKey(true).Key;
+                    if (inputNum == ConsoleKey.D1 || inputNum == ConsoleKey.D2
+                        || inputNum == ConsoleKey.D3 || inputNum == ConsoleKey.D4
+                        || inputNum == ConsoleKey.D5)
+                    {
+                        int select = (int)inputNum - (int)ConsoleKey.D1;
+                        selectIndex = select;
+                    }
+                    else
+                    {
+                        Console.WriteLine("1~5까지의 번호를 입력해주세요.");
+                        Console.ReadKey(true);
+                        break;
+                    }
+
+
+                    if (Game.Player.inventory.items[selectIndex] == null)
+                    {
+                        Console.WriteLine("해당하는 곳은 비어있습니다.");
+                        break;
+                    }
+                    else
+                    {
+                        Game.Player.inventory.RemoveAt(selectIndex);
+                        Game.Player.inventory.Gold += 200;
+                        Console.WriteLine("포션을 팔았습니다.");
+                        Console.ReadKey();
+                    }
                         break;
                     
 
