@@ -1,7 +1,7 @@
 ﻿using MyTestMiniGame.Scenes;
 using System.Security.Cryptography.X509Certificates;
 
-namespace MyTestMiniGame
+namespace MyTestMiniGame.Scenes
 {
     public class HomeScene : FieldScene
     {

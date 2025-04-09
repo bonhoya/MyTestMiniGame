@@ -8,10 +8,15 @@ namespace MyTestMiniGame
         private Stack<string> stack;
         private int selectIndex;
 
+        public int gold;
+
         public Inventory()
         {
             items = new List<Item>(5);
             stack = new Stack<string>();
+            gold = 1000;
+            if (gold < 0)
+                gold = 0;
         }
 
         // 아이템의 추가
@@ -47,6 +52,11 @@ namespace MyTestMiniGame
             {
                 Console.WriteLine("{0}. {1}", i + 1, items[i].name);
             }
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("━━ 골드 ━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("현재 가진 골드: {0}", gold);
+            Console.WriteLine("━━ 체력 ━━━━━━━━━━━━━━━━━━━━━━");
+            Console.WriteLine("현재 가진 체력: {0}", (new Player().CurHP));
             Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
         }
 
@@ -129,9 +139,6 @@ namespace MyTestMiniGame
                     stack.Push("UseConfirm");
                 }
             }
-
-
-
         }
 
         private void DropMenu()

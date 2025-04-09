@@ -27,7 +27,8 @@ namespace MyTestMiniGame.Scenes
           '/',
           '\\',
           '_',
-          '┼'
+          '┼',
+          '$'
 
         };
 

@@ -44,6 +44,8 @@ namespace MyTestMiniGame
             sceneDic.Add("Boss", new BossScene());
             sceneDic.Add("Ending", new EndingScene());
             sceneDic.Add("HomeTown", new HomeTownScene());
+            sceneDic.Add("Shop", new ShopScene());
+            sceneDic.Add("Shopper", new ShopperScene());
 
             curScene = sceneDic["Opening"];
         }
