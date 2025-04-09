@@ -8,15 +8,15 @@ namespace MyTestMiniGame
         private Stack<string> stack;
         private int selectIndex;
 
-        public int gold;
+        private int gold;
+        public int Gold { get { return gold; } set { gold = value; } }
 
         public Inventory()
         {
             items = new List<Item>(5);
             stack = new Stack<string>();
             gold = 1000;
-            if (gold < 0)
-                gold = 0;
+            
         }
 
         // 아이템의 추가

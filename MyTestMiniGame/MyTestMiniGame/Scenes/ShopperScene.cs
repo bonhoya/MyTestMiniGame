@@ -11,7 +11,7 @@ namespace MyTestMiniGame.Scenes
     {
         
         private ConsoleKey input;
-
+        
         public ShopperScene()
         {
             name = "Shopper";
@@ -32,7 +32,7 @@ namespace MyTestMiniGame.Scenes
         }
         public override void Update()
         {
-            
+
         }
         public override void Result()
         {
@@ -41,7 +41,7 @@ namespace MyTestMiniGame.Scenes
             {
                 case ConsoleKey.D1:
                     
-                    if ((Game.Player.inventory.gold -= 300) <= 0)
+                    if ((Game.Player.inventory.Gold - 300) <= 0)
                     {
                         Console.WriteLine("소지금이 부족합니다.");
                         Console.ReadKey(true);
@@ -49,12 +49,18 @@ namespace MyTestMiniGame.Scenes
                     }
                     else
                     {
-                        Game.Player.inventory.gold -= 300;
+                        Game.Player.inventory.Gold -= 300;
                         Console.WriteLine("포션을 구매하였습니다. (-300$)");
                         Game.Player.inventory.Add(potion);
                         Console.ReadKey(true);
                     }
                     break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("몇번째 포션을 파시겠습니까?");
+                    Game.Player.inventory.PrintAll();
+                    Console.WriteLine("해당하는 포션의 숫자를 입력해주세요.");
+                        break;
+                    
 
                 case ConsoleKey.D0:
                     Game.ChangeScene("Shop");
