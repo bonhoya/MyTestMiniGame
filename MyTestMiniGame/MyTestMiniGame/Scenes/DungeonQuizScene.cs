@@ -28,7 +28,7 @@ namespace MyTestMiniGame.Scenes
             Console.ReadKey(true);
             Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             util.SolwTalk("나의 잠을 깨우다니... 너... 어리석구나...", ConsoleColor.DarkRed);
-            util.SolwTalk("음...? 너 제법 쓸만해 보이는 구나...", ConsoleColor.DarkRed);
+            util.SolwTalk("음...? 너 제법 쓸만해 보이는 군...", ConsoleColor.DarkRed);
             util.SolwTalk("나는 퀴즈를 좋아하지...", ConsoleColor.DarkRed);
             util.SolwTalk("퀴즈를 낼테니 맞추면 살려보내주마...", ConsoleColor.DarkRed);
             Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");

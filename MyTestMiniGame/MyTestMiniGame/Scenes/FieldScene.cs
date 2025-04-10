@@ -14,7 +14,8 @@ namespace MyTestMiniGame.Scenes
         protected char[] pictureFalse =
         { '#', '─', '│', '┌', '┐', '└', '┘', '├', '┤', '〓', '┴', '┬',
           '/', '\\','_', '┼', '$', '\'','♠','M', 'T', 'O', 'W', 'N', '♥',
-          'D', 'U', 'G', 'E', '♣', 'A', 'Z', '◆', 'B', 'S', '3', '2' };
+          'D', 'U', 'G', 'E', '♣', 'A', 'Z', '◆', 'B', 'S', '3', '2', '━',
+          '┓', '┛', '┏', '┃'};
 
         private ConsoleKey input;
 
