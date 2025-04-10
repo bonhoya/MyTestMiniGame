@@ -13,10 +13,11 @@ namespace MyTestMiniGame
             foreach(char c in message)
             {
                 Console.ForegroundColor = color;
-                Console.WriteLine(c);
+                Console.Write(c);
                 Console.ResetColor();
                 Thread.Sleep(100);
             }
+            Console.WriteLine();
         }
     }
 }

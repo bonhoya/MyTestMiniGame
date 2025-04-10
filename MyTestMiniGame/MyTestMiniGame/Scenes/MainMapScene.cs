@@ -8,10 +8,10 @@ namespace MyTestMiniGame.Scenes
 {
     public class MainMapScene : FieldScene
     {
+        private bool clearStage;
         public MainMapScene()
         {
             name = "MainMap";
-
             mapData = new string[]
             {
                 "##################################################################################",
@@ -46,10 +46,10 @@ namespace MyTestMiniGame.Scenes
             }
             objects = new List<Object>();
             objects.Add(new Portal("HomeTown", new Vector2(9, 3), 'P'));
-            objects.Add(new Portal("DungeonQuiz", new Vector2(19, 10), 'P'));
-            objects.Add(new Portal("Maze", new Vector2(42, 3), 'P'));
+            objects.Add(new Portal("DungeonQuiz", new Vector2(19, 8), 'P'));
+            objects.Add(new Portal("Maze", new Vector2(38, 4), 'P'));
             objects.Add(new Portal("Boss", new Vector2(66, 5), 'P'));
-
+            
         }
         public override void Enter()
         {
@@ -59,11 +59,13 @@ namespace MyTestMiniGame.Scenes
             }
             else if (Game.preSceneName == "Dungeon")
             {
+                objects.RemoveAt(1);
                 Game.Player.playerPos = new Vector2(19, 10);
             }
             else if (Game.preSceneName == "Maze")
             {
-                Game.Player.playerPos = new Vector2(42, 3);
+                objects.RemoveAt(1);
+                Game.Player.playerPos = new Vector2(47, 4);
             }
             else if (Game.preSceneName == "Boss")
             {

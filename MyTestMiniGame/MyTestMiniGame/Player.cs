@@ -4,7 +4,9 @@
     {
         public Vector2 playerPos;
         public bool[,] map;
-        
+
+        private int gameScore;
+        public int GameScore { get { return gameScore; } set { gameScore = value; } }
 
         private int curhp;
         public int CurHP { get { return curhp; } }
@@ -21,6 +23,7 @@
             inventory = new Inventory();
             maxhp = 100;
             curhp = maxhp;
+            gameScore = 0;
 
         }
 

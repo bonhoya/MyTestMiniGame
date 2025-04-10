@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyTestMiniGame.Objects.Jewels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace MyTestMiniGame.Scenes
                 "#   └────         └────   /     └────   #",
                 "#                                  ___  #",
                 "#                 ┌─────┐  ┌──────┘   └┐#",
-                "#         ──────  └     │  │          ┌┘ #",
+                "#         ──────  └     │  │_____  ┼  ┌┘ #",
                 "#         ──────    ┌───┘   └└──┐─┘  │┘ #",
                 "#                   │          ┌┘  ┌ │  #",
                 "#    3      2      ┌─┐        ┌┘ ┌ │ │  #",
@@ -53,16 +54,15 @@ namespace MyTestMiniGame.Scenes
                 }
             }
             objects = new List<Object>();
-            objects.Add(new Portal("MainMap", new Vector2(10, 2), 'P'));
+            objects.Add(new Portal("MainMap", new Vector2(5, 12), 'P'));
+            objects.Add(new Portal("QuizFail", new Vector2(12, 12), 'P'));
+            objects.Add(new HeartJewel(new Vector2(8, 14)));
         }
         
 
         public override void Enter()
         {
-            if (Game.preSceneName == "MainMap")
-            {
-                Game.Player.playerPos = new Vector2(16, 7);
-            }
+
             Game.Player.map = map;
 
         }

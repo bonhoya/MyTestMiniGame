@@ -41,6 +41,7 @@ namespace MyTestMiniGame
             sceneDic.Add("Home", new HomeScene());
             sceneDic.Add("Dungeon", new DungeonScene());
             sceneDic.Add("DungeonQuiz", new DungeonQuizScene());
+            sceneDic.Add("QuizFail", new QuizFailScene());
             sceneDic.Add("Maze", new MazeScene());
             sceneDic.Add("Boss", new BossScene());
             sceneDic.Add("Ending", new EndingScene());
@@ -82,11 +83,16 @@ namespace MyTestMiniGame
         // 게임 종료
         private static void End()
         {
+            if(Game.Player.GameScore == 1)
+            {
+                Console.WriteLine("엔딩 1: 퀴즈를 틀린자");
+            }
 
         }
 
         public static void GameOver()
         {
+            Console.SetWindowSize(33, 40);
             gameOver = true;
             Console.Clear();
             Console.WriteLine("┌───────────────────────────────┐");
