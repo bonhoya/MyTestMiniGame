@@ -20,6 +20,8 @@ namespace MyTestMiniGame
         public static ControlKey ControlKey { get { return controlKey; } }
 
         public static string preSceneName;
+        private static GameClearPrint gameClearPrint = new GameClearPrint();
+        private static GameOverPrint gameOverPrint = new GameOverPrint();
 
         private static void Start()
         {
@@ -37,6 +39,7 @@ namespace MyTestMiniGame
             // 씬 설정
             sceneDic = new Dictionary<string, SceneOrigin>();
             sceneDic.Add("Opening", new OpeningScene());
+            sceneDic.Add("GameInfo", new GameInfoScene());
             sceneDic.Add("MainMap", new MainMapScene());
             sceneDic.Add("Home", new HomeScene());
             sceneDic.Add("Dungeon", new DungeonScene());
@@ -44,10 +47,12 @@ namespace MyTestMiniGame
             sceneDic.Add("QuizFail", new QuizFailScene());
             sceneDic.Add("Maze", new MazeScene());
             sceneDic.Add("Boss", new BossScene());
+            sceneDic.Add("TalkToBoss", new TalkToBossScene());
             sceneDic.Add("Ending", new EndingScene());
             sceneDic.Add("HomeTown", new HomeTownScene());
             sceneDic.Add("Shop", new ShopScene());
             sceneDic.Add("Shopper", new ShopperScene());
+            
 
             curScene = sceneDic["Opening"];
         }
@@ -75,6 +80,10 @@ namespace MyTestMiniGame
                 curScene.Update();
                 Console.WriteLine();
                 curScene.Result();
+                if (Game.Player.GameScore == 4)
+                {
+                    Game.GameClear();
+                }
             }
 
             End();
@@ -85,29 +94,43 @@ namespace MyTestMiniGame
         {
             if(Game.Player.GameScore == 1)
             {
-                Console.WriteLine("엔딩 1: 퀴즈를 틀린자");
+                Console.WriteLine("엔딩 1: 조금 모자른(?)자");
+                Console.ReadKey(true);
+            }
+            else if(Game.Player.GameScore == 2)
+            {
+                Console.WriteLine("엔딩 2: 쥬얼이 3개뿐???");
+                Console.ReadKey(true);
+            }
+            else if(Game.Player.GameScore == 3)
+            {
+                Console.WriteLine("엔딩 3: 세상은 우리의 것");
+                Console.ReadKey(true);
+            }
+            else if (Game.Player.GameScore == 4)
+            {
+                Console.WriteLine("엔딩 4: 세상을 구원한자");
+                Console.ReadKey(true);
             }
 
+        }
+
+        public static void GameClear()
+        {
+            Console.SetWindowSize(33, 40);
+            Console.Clear();
+            gameClearPrint.Print();
+            Console.ReadKey(true);
+            gameOver = true;
         }
 
         public static void GameOver()
         {
             Console.SetWindowSize(33, 40);
-            gameOver = true;
             Console.Clear();
-            Console.WriteLine("┌───────────────────────────────┐");
-            Console.WriteLine("│   _____                       │");
-            Console.WriteLine("│  / ____|                      │");
-            Console.WriteLine("│ | |  __  __ _ _ __ ____  ___  │");
-            Console.WriteLine("│ | | |_ |/ _` | '_ ` _  \\/ _ \\ │");
-            Console.WriteLine("│ | |__| | (_| | | | | | |  __/ │");
-            Console.WriteLine("│  \\_____|\\__,_|_| |_| |_|\\___| │");
-            Console.WriteLine("│  / __ \\                       │");
-            Console.WriteLine("│ | |  | |_   _____ _ __        │");
-            Console.WriteLine("│ | |  | \\ \\ / / _ \\ '__|       │");
-            Console.WriteLine("│ | |__| |\\ V /  __/ |          │");
-            Console.WriteLine("│  \\____/  \\_/ \\___|_|          │");
-            Console.WriteLine("└───────────────────────────────┘");
+            gameOverPrint.Print();
+            Console.ReadKey(true);
+            gameOver = true;
         }
     }
 }

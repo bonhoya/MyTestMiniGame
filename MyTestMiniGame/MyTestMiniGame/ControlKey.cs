@@ -57,7 +57,7 @@ namespace MyTestMiniGame
                     }
                     else if (position.y == 16)
                     {
-                        Game.ChangeScene("");
+                        Game.ChangeScene("GameInfo");
                     }
                     else if (position.y == 17)
                     {

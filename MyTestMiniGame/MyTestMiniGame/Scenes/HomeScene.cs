@@ -48,7 +48,7 @@ namespace MyTestMiniGame.Scenes
 
             objects = new List<Object>();
             objects.Add(new Portal("HomeTown", new Vector2(21, 3), 'P'));
-            objects.Add(new CloverJewel(new Vector2(7, 5)));
+            objects.Add(new DiamondJewel(new Vector2(7, 5)));
 
         }
         public override void Enter()

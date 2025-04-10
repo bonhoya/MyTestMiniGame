@@ -35,6 +35,11 @@ namespace MyTestMiniGame.Scenes
             Console.ReadKey(true);
             Console.WriteLine("시스템: 당신이 고개를 끄덕이자 석상은 기다렸다는 듯, 벽을 가르킵니다.");
             Console.ReadKey(true);
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+            util.SolwTalk("2 + 2 / 2의 값은 무엇이지?", ConsoleColor.DarkRed);
+            util.SolwTalk("답에 맞는 곳으로 들어가라...", ConsoleColor.DarkRed);
+            Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+            Console.ReadKey(true);
         }
         public override void Input()
         {

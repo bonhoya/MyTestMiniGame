@@ -71,6 +71,11 @@ namespace MyTestMiniGame.Scenes
             {
                 Game.Player.playerPos = new Vector2(66, 5);
             }
+            else if (Game.preSceneName == "TalkToBoss")
+            {
+                Game.Player.playerPos = new Vector2(66, 5);
+                objects.RemoveAt(1);
+            }
             else
                 Game.Player.playerPos = new Vector2(23, 10);
 

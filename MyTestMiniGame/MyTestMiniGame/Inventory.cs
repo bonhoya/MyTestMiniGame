@@ -10,6 +10,7 @@ namespace MyTestMiniGame
 
         private int gold;
         public int Gold { get { return gold; } set { gold = value; } }
+        public Stack<string> Stack { get { return stack; } set { stack = value; } }
 
         public Inventory()
         {
